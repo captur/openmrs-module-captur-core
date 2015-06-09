@@ -42,7 +42,7 @@ public class CoreContextTest extends BaseModuleContextSensitiveTest {
 	 */
 	@Before
 	public void setup() {
-		testMetadata.install();
+//		testMetadata.install();
 
 		core.refresh();
 	}

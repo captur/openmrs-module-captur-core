@@ -14,17 +14,17 @@
 
 package org.openmrs.module.kenyacore;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.openmrs.module.appframework.AppDescriptor;
-import org.openmrs.module.appframework.SimpleAppDescriptor;
-import org.openmrs.module.kenyacore.test.TestUtils;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.nullValue;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import static org.hamcrest.Matchers.*;
+import org.junit.Assert;
+import org.junit.Test;
+import org.openmrs.module.kenyacore.test.TestUtils;
 
 /**
  * Tests for {@link CoreUtils}

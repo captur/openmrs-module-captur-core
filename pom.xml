@@ -3,11 +3,7 @@
 
 	<groupId>org.openmrs.module</groupId>
 	<artifactId>kenyacore</artifactId>
-<<<<<<< HEAD
 	<version>0.17-SNAPSHOT</version>
-=======
-	<version>0.15-SNAPSHOT</version>
->>>>>>> 8709725
 
 	<packaging>pom</packaging>
 	<name>KenyaCore</name>
@@ -38,11 +34,7 @@
 	</modules>
 	
 	<properties>
-<<<<<<< HEAD
-		<openMRSVersion>1.9.6</openMRSVersion>
-=======
 		<openMRSVersion>1.11.0</openMRSVersion>
->>>>>>> 8709725
 
 		<!-- Module dependencies -->
 		<appframeworkVersion>2.3</appframeworkVersion>
@@ -54,11 +46,7 @@
 		<metadatasharingVersion>1.1.8</metadatasharingVersion>
 		<reportingVersion>0.9.3</reportingVersion>
 		<serializationxstreamVersion>0.2.7</serializationxstreamVersion>
-<<<<<<< HEAD
-		<uiframeworkVersion>3.1</uiframeworkVersion>
-=======
 		<uiframeworkVersion>3.2</uiframeworkVersion>
->>>>>>> 8709725
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

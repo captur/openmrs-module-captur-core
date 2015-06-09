@@ -4,11 +4,7 @@
 	<parent>
 		<groupId>org.openmrs.module</groupId>
 		<artifactId>kenyacore</artifactId>
-<<<<<<< HEAD
 		<version>0.17-SNAPSHOT</version>
-=======
-		<version>0.15-SNAPSHOT</version>
->>>>>>> 8709725
 	</parent>
 
 	<artifactId>kenyacore-api</artifactId>

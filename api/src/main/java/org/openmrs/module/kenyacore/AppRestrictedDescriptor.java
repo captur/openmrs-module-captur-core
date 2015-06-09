@@ -14,9 +14,9 @@
 
 package org.openmrs.module.kenyacore;
 
-import org.openmrs.module.appframework.AppDescriptor;
-
 import java.util.Set;
+
+import org.openmrs.module.appframework.domain.AppDescriptor;
 
 /**
  * Describes entities which access to is restricted by app
