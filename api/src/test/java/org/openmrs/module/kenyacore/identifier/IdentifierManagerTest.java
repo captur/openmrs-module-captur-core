@@ -14,9 +14,13 @@
 
 package org.openmrs.module.kenyacore.identifier;
 
+import static org.hamcrest.Matchers.containsInAnyOrder;
+
+import java.util.List;
+
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openmrs.Patient;
 import org.openmrs.PatientIdentifier;
@@ -25,10 +29,6 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.kenyacore.metadata.MetadataUtils;
 import org.openmrs.test.BaseModuleContextSensitiveTest;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
-
-import static org.hamcrest.Matchers.*;
 
 /**
  * Tests for {@link org.openmrs.module.kenyacore.identifier.IdentifierManager}
@@ -91,4 +91,10 @@ public class IdentifierManagerTest extends BaseModuleContextSensitiveTest {
 
 		Assert.assertNull(identifierManager.getIdentifierSource(oldIDType));
 	}
+	
+	@After
+	public void tearDown() throws Exception {
+		this.deleteAllData();
+	}
+	
 }

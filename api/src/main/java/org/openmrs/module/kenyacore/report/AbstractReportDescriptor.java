@@ -14,11 +14,11 @@
 
 package org.openmrs.module.kenyacore.report;
 
-import org.openmrs.module.appframework.AppDescriptor;
+import java.util.Set;
+
+import org.openmrs.module.appframework.domain.AppDescriptor;
 import org.openmrs.module.kenyacore.AbstractOrderedDescriptor;
 import org.openmrs.module.reporting.definition.DefinitionSummary;
-
-import java.util.Set;
 
 /**
  * Abstract base class for report descriptors

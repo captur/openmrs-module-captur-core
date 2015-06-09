@@ -14,10 +14,10 @@
 
 package org.openmrs.module.kenyacore.report;
 
-import org.openmrs.module.appframework.AppDescriptor;
-import org.openmrs.module.reporting.definition.DefinitionSummary;
-
 import java.util.Set;
+
+import org.openmrs.module.appframework.domain.AppDescriptor;
+import org.openmrs.module.reporting.definition.DefinitionSummary;
 
 /**
  * Describes a report

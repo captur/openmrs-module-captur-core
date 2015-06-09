@@ -14,13 +14,13 @@
 
 package org.openmrs.module.kenyacore.form;
 
+import java.util.Set;
+
 import org.openmrs.Form;
-import org.openmrs.module.appframework.AppDescriptor;
+import org.openmrs.module.appframework.domain.AppDescriptor;
 import org.openmrs.module.kenyacore.AbstractEntityDescriptor;
 import org.openmrs.module.kenyacore.UiResource;
 import org.openmrs.module.kenyacore.metadata.MetadataUtils;
-
-import java.util.Set;
 
 /**
  * Describes how a form can be used in the EMR. Each form should have a component of this type in the application
