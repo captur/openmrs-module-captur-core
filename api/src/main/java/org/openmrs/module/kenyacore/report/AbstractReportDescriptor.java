@@ -14,27 +14,16 @@
 
 package org.openmrs.module.kenyacore.report;
 
-<<<<<<< HEAD
-import org.openmrs.api.context.Context;
-import org.openmrs.module.appframework.AppDescriptor;
-import org.openmrs.module.kenyacore.AbstractEntityDescriptor;
-import org.openmrs.module.kenyacore.AppRestrictedDescriptor;
-import org.openmrs.module.reporting.definition.DefinitionSummary;
-import org.openmrs.module.reporting.report.definition.ReportDefinition;
-import org.openmrs.module.reporting.report.definition.service.ReportDefinitionService;
-import org.openmrs.module.reporting.report.service.ReportService;
-
-=======
->>>>>>> 8709725
 import java.util.Set;
 
 import org.openmrs.module.appframework.domain.AppDescriptor;
+import org.openmrs.module.kenyacore.AbstractOrderedDescriptor;
 import org.openmrs.module.reporting.definition.DefinitionSummary;
 
 /**
- * Describes a report
+ * Abstract base class for report descriptors
  */
-public class ReportDescriptor extends AbstractEntityDescriptor<ReportDefinition> implements AppRestrictedDescriptor {
+public abstract class AbstractReportDescriptor extends AbstractOrderedDescriptor implements ReportDescriptor {
 
 	protected String name;
 
@@ -43,17 +32,9 @@ public class ReportDescriptor extends AbstractEntityDescriptor<ReportDefinition>
 	protected Set<AppDescriptor> apps;
 
 	/**
-	 * @see org.openmrs.module.kenyacore.AbstractEntityDescriptor#getTarget()
+	 * @see ReportDescriptor#getName()
 	 */
 	@Override
-	public ReportDefinition getTarget() {
-		return Context.getService(ReportDefinitionService.class).getDefinitionByUuid(targetUuid);
-	}
-
-	/**
-	 * Gets the name
-	 * @return the name
-	 */
 	public String getName() {
 		return name;
 	}
@@ -67,9 +48,9 @@ public class ReportDescriptor extends AbstractEntityDescriptor<ReportDefinition>
 	}
 
 	/**
-	 * Gets the description
-	 * @return the description
+	 * @see ReportDescriptor#getName()
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -83,7 +64,7 @@ public class ReportDescriptor extends AbstractEntityDescriptor<ReportDefinition>
 	}
 
 	/**
-	 * @see org.openmrs.module.kenyacore.AppRestrictedDescriptor#getApps()
+	 * @see ReportDescriptor#getApps()
 	 */
 	@Override
 	public Set<AppDescriptor> getApps() {
@@ -91,16 +72,17 @@ public class ReportDescriptor extends AbstractEntityDescriptor<ReportDefinition>
 	}
 
 	/**
-	 * @see org.openmrs.module.kenyacore.AppRestrictedDescriptor#setApps(java.util.Set)
+	 * Sets the apps
+	 * @param apps the apps
 	 */
-	@Override
 	public void setApps(Set<AppDescriptor> apps) {
 		this.apps = apps;
 	}
 
 	/**
-	 * Gets a definition summary
+	 * @see ReportDescriptor#getDefinitionSummary()
 	 */
+	@Override
 	public DefinitionSummary getDefinitionSummary() {
 		DefinitionSummary ret = new DefinitionSummary();
 		ret.setName(getName());

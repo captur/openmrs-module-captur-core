@@ -14,22 +14,26 @@
 
 package org.openmrs.module.kenyacore.form;
 
+import static org.hamcrest.Matchers.contains;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openmrs.Patient;
+<<<<<<< HEAD
 import org.openmrs.Visit;
 import org.openmrs.VisitType;
 import org.openmrs.module.appframework.AppDescriptor;
 import org.openmrs.module.kenyacore.TestMetadata;
+=======
+import org.openmrs.module.appframework.domain.AppDescriptor;
+>>>>>>> 8709725
 import org.openmrs.module.kenyacore.program.ProgramManager;
 import org.openmrs.module.kenyacore.test.TestUtils;
 import org.openmrs.module.metadatadeploy.MetadataUtils;
 import org.openmrs.test.BaseModuleContextSensitiveTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-
-import static org.hamcrest.Matchers.*;
 
 /**
  * Tests for {@link FormManager}

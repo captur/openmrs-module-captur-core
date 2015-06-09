@@ -14,26 +14,6 @@
 
 package org.openmrs.module.kenyacore.form;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.openmrs.Encounter;
-import org.openmrs.Form;
-import org.openmrs.Patient;
-import org.openmrs.Program;
-import org.openmrs.Visit;
-import org.openmrs.api.context.Context;
-import org.openmrs.module.appframework.AppDescriptor;
-import org.openmrs.module.htmlformentry.HtmlFormEntryUtil;
-import org.openmrs.module.htmlformentry.handler.TagHandler;
-import org.openmrs.module.kenyacore.ContentManager;
-import org.openmrs.module.kenyacore.CoreUtils;
-import org.openmrs.module.kenyacore.form.FormDescriptor.Gender;
-import org.openmrs.module.kenyacore.program.ProgramDescriptor;
-import org.openmrs.module.kenyacore.program.ProgramManager;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -44,6 +24,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.openmrs.Encounter;
+import org.openmrs.Form;
+import org.openmrs.Patient;
+import org.openmrs.Program;
+import org.openmrs.Visit;
+import org.openmrs.api.context.Context;
+import org.openmrs.module.appframework.domain.AppDescriptor;
+import org.openmrs.module.htmlformentry.HtmlFormEntryUtil;
+import org.openmrs.module.htmlformentry.handler.TagHandler;
+import org.openmrs.module.kenyacore.ContentManager;
+import org.openmrs.module.kenyacore.CoreUtils;
+import org.openmrs.module.kenyacore.form.FormDescriptor.Gender;
+import org.openmrs.module.kenyacore.program.ProgramDescriptor;
+import org.openmrs.module.kenyacore.program.ProgramManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Forms manager

@@ -6,10 +6,22 @@
 
 	<!-- ==================== Apps ======================== -->
 
+<<<<<<< HEAD
 	<bean id="test.app.app1" class="org.openmrs.module.appframework.SimpleAppDescriptor">
 		<property name="id" value="test.test1"/>
 		<property name="label" value="App #1"/>
 	</bean>
+=======
+	<bean id="test.app.app1" class="org.openmrs.module.appframework.domain.AppDescriptor">
+	    <constructor-arg value="test.test"/>
+	    <constructor-arg value="test"/>
+	    <constructor-arg value="test"/>
+	    <constructor-arg value="test"/>
+	    <constructor-arg value="test"/>
+	    <constructor-arg value="test"/>
+	    <constructor-arg value="0"/>
+   	</bean>
+>>>>>>> 8709725
 
 	<bean id="test.app.app2" class="org.openmrs.module.appframework.SimpleAppDescriptor">
 		<property name="id" value="test.test2"/>

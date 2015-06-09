@@ -4,7 +4,11 @@
 	<parent>
 		<groupId>org.openmrs.module</groupId>
 		<artifactId>kenyacore</artifactId>
+<<<<<<< HEAD
 		<version>0.17-SNAPSHOT</version>
+=======
+		<version>0.15-SNAPSHOT</version>
+>>>>>>> 8709725
 	</parent>
 
 	<artifactId>kenyacore-api</artifactId>
@@ -109,6 +113,11 @@
 		</dependency>
 
 		<!-- End OpenMRS core -->
+
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>jasper</artifactId>
+		</dependency>
 
 	</dependencies>
 

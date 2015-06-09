@@ -18,6 +18,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.openmrs.Concept;
 import org.openmrs.DrugOrder;
 import org.openmrs.Encounter;
+import org.openmrs.EncounterRole;
 import org.openmrs.EncounterType;
 import org.openmrs.Form;
 import org.openmrs.GlobalProperty;
@@ -25,6 +26,7 @@ import org.openmrs.Location;
 import org.openmrs.LocationAttribute;
 import org.openmrs.LocationAttributeType;
 import org.openmrs.Obs;
+import org.openmrs.Order.Action;
 import org.openmrs.Patient;
 import org.openmrs.PatientIdentifier;
 import org.openmrs.PatientIdentifierType;
@@ -131,8 +133,8 @@ public class TestUtils {
 	public static Encounter saveEncounter(Patient patient, EncounterType type, Form form, Date date, Obs... obss) {
 		Encounter encounter = new Encounter();
 		encounter.setPatient(patient);
-		encounter.setProvider(Context.getUserService().getUser(1)); // Super user
-		encounter.setLocation(Context.getLocationService().getLocation(1)); // Unknown Location
+		encounter.setProvider(Context.getEncounterService().getEncounterRole(1), Context.getProviderService().getProvider(1)); 
+		encounter.setLocation(Context.getLocationService().getLocation(1)); 
 		encounter.setEncounterType(type);
 		encounter.setForm(form);
 		encounter.setEncounterDatetime(date);
@@ -206,14 +208,19 @@ public class TestUtils {
 	 */
 	public static DrugOrder saveDrugOrder(Patient patient, Concept concept, Date start, Date end) {
 		DrugOrder order = new DrugOrder();
-		order.setOrderType(Context.getOrderService().getOrderType(2));
-		order.setPatient(patient);
-		order.setOrderer(Context.getUserService().getUser(1));
+		order.setAction( end != null ? Action.DISCONTINUE : Action.NEW );
+		order.setCareSetting(Context.getOrderService().getCareSetting(1));
 		order.setConcept(concept);
-		order.setStartDate(start);
-		order.setDiscontinued(end != null);
-		order.setDiscontinuedDate(end);
-		return (DrugOrder) Context.getOrderService().saveOrder(order);
+		order.setDateActivated(start);
+		order.setDose(100.0);
+		order.setDoseUnits(Context.getConceptService().getConcept(161554));
+		order.setEncounter(Context.getEncounterService().getEncountersByPatient(patient).get(0));
+		order.setFrequency(Context.getOrderService().getOrderFrequency(200001));
+		order.setOrderer(Context.getProviderService().getProvider(1));
+		order.setOrderType(Context.getOrderService().getOrderType(1));
+		order.setPatient(patient);
+		order.setRoute(Context.getConceptService().getConcept(160240));
+		return (DrugOrder) Context.getOrderService().saveOrder(order, null);
 	}
 
 	/**
